@@ -9,16 +9,24 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:OnTheGoSystems/micro_router.git"
+    "url": "git+ssh://git@github.com/OnTheGoSystems/micro_router.git"
   },
   "files": [
     "index.js"
   ],
-  "keywords": ["router", "routing", "route", "routes"],
+  "keywords": [
+    "router",
+    "routing",
+    "route",
+    "routes"
+  ],
   "author": "Vitaly Tarasenko <vetal.tarasenko@gmail.com>",
   "license": "MIT",
   "homepage": "https://github.com/OnTheGoSystems/micro_router",
   "devDependencies": {
     "jest": ""
+  },
+  "bugs": {
+    "url": "https://github.com/OnTheGoSystems/micro_router/issues"
   }
 }
