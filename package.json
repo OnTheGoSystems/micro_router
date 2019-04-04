@@ -1,0 +1,24 @@
+{
+  "name": "micro_router",
+  "version": "0.0.1",
+  "description": "Simple and minimalistic pure JS router for clientside",
+  "main": "index.js",
+  "scripts": {
+    "pretest": "standard",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:OnTheGoSystems/micro_router.git"
+  },
+  "files": [
+    "index.js"
+  ],
+  "keywords": ["router", "routing", "route", "routes"],
+  "author": "Vitaly Tarasenko <vetal.tarasenko@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/OnTheGoSystems/micro_router",
+  "devDependencies": {
+    "jest": ""
+  }
+}
