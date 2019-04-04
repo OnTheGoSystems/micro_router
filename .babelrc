@@ -1,14 +1,15 @@
 {
-  "presets": [
-    "@babel/preset-env"
-  ],
   "env": {
-    "testing": {
-      "presets":[
-        ["@babel/preset-env",  { "modules": false }]
-      ],
+    "development": {
+      "presets": ["env"],
       "plugins": [
-        "transform-es2015-modules-commonjs"
+        "add-module-exports"
+      ]
+    },
+    "production": {
+      "presets": ["env", "minify"],
+      "plugins": [
+        "add-module-exports"
       ]
     }
   }

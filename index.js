@@ -1,3 +1,3 @@
 module.exports = {
-  MicroRouter: require('./src/micro_router')
+  MicroRouter: require('./lib/micro_router')
 };
