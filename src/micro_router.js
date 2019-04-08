@@ -71,7 +71,7 @@ export default class MicroRouter {
           let cp = currentParts[j];
           let p = parts[j];
           if(p[0] === ':') {
-            params[p.replace(':', '')] = cp;
+            params[p.replace(':', '')] = decodeURIComponent(cp);
           } else {
             if(p !== cp) {
               valid = false;
