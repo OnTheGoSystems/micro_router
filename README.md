@@ -27,8 +27,8 @@ const MyRouter = new MicroRouter('state_view_router_state', MicroRouter.modes.wi
 
 // draw your routes
 MyRouter.setDefaultRoute('notification/example');
-MyRouter.addRoute('dashboard', StateDashboard);
-MyRouter.addRoute('notification/:text', StateNotification);
+MyRouter.addRoute('dashboard', StateDashboard); // StateDashboard is your ReactComponent.
+MyRouter.addRoute('notification/:text', StateNotification); // StateNotification is another your ReactComponent.
 
 // create nav helpers (optinal)
 MyRouter.nav = {
@@ -75,3 +75,5 @@ export default class AppRoot extends Component {
   }
 }
 ```
+
+To change router state use the folowing syntax`MyRouter.navigate({ view: StateNotification, text: message})` or `MyRouter.navigatebyPath('notification/your-text-here')`
