@@ -23,11 +23,12 @@ SOFTWARE.
 */
 
 export default class MicroRouter {
-  constructor(key) {
+  constructor(key, persistStateToLocalstorage = false) {
     this.key = (key || 'state_view_router_state');
     this.routes = [];
     this.callbacks = [];
     this.defaultRoute = null;
+    this.persistStateToLocalstorage = persistStateToLocalstorage;
   }
 
   addRoute(route, view) {
@@ -40,6 +41,16 @@ export default class MicroRouter {
 
   currentState() {
     return this.resolve(localStorage.getItem(this.key) || this.defaultRoute);
+  };
+
+  currentWindowHashState(){
+    return this.resolve(window.location.hash.replace('#', ''))
+  };
+
+  bindToWindowHash() {
+    window.onhashchange = function(){
+      this.navigate(this.currentWindowHashState());
+    };
   };
 
   resolve(route){
@@ -72,12 +83,13 @@ export default class MicroRouter {
 
   navigate(viewState){
     let path = this.buildPath(viewState);
-    localStorage.setItem(this.key, path);
+    if(this.persistStateToLocalstorage) localStorage.setItem(this.key, path);
     this.runCallbacks();
   };
 
   navigateByPath(path){
-    this.navigate(this.resolve(path));
+    const resolvedState = this.resolve(path);
+    this.navigate(resolvedState);
   };
 
   afterNavigate(callback) {
