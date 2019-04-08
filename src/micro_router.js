@@ -67,7 +67,7 @@ export default class MicroRouter {
         let params = { view: this.routes[i].view };
         let valid = true;
 
-        for(let j =0; j < parts.length; j++) {
+        for(let j = 0; j < parts.length; j++) {
           let cp = currentParts[j];
           let p = parts[j];
           if(p[0] === ':') {
@@ -79,7 +79,10 @@ export default class MicroRouter {
             }
           }
         }
-        if(valid) { return params }
+        if(valid) {
+          console.log('MicroRouter.resolve', route, params);
+          return params
+        }
       }
     }
 
@@ -119,12 +122,14 @@ export default class MicroRouter {
       path = path.replace(':' + params[i], viewState[params[i]])
     }
 
+    console.log('MicroRouter.buildPath', viewState, path);
     return path;
   };
 
   routeForView(view){
     for(let i = 0; i < this.routes.length; i++) {
       if(this.routes[i].view === view) {
+        console.log('MicroRouter.routeForView', view, this.routes[i]);
         return this.routes[i]
       }
     }
