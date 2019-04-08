@@ -15,8 +15,14 @@ const testRouter = (routerClass)=> {
   router.addRoute('other/:param', View2);
   router.addRoute('third/:param/:other_param', View3);
 
+  // default
   expect(router.currentState()).toEqual({ view: View1 });
 
+  // fallback
+  expect(router.resolve('some/param')).toEqual({ view: View1 });
+  expect(router.resolve('notdefined')).toEqual({ view: View1 });
+
+  // defined routes
   expect(router.resolve('some')).toEqual({ view: View1 });
   expect(router.resolve('other/1')).toEqual({ view: View2, param: "1" });
   expect(router.resolve('third/good/value')).toEqual({ view: View3, param: 'good', other_param: 'value' });
