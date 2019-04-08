@@ -33,6 +33,9 @@ const testRouter = (routerClass)=> {
   router.navigateByPath('other/123');
   expect(router.currentState()).toEqual({ view: View2, param: '123' });
 
+  router.navigateByPath('other/1 2 3');
+  expect(router.currentState()).toEqual({ view: View2, param: '1 2 3' });
+
   router.navigate({ view: View3, param: '1', other_param: '2' });
   expect(router.currentState()).toEqual({ view: View3, param: '1', other_param: '2' });
 
