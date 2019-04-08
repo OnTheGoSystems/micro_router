@@ -23,12 +23,12 @@ SOFTWARE.
 */
 
 export default class MicroRouter {
-  constructor(key, persistStateToLocalstorage = false) {
+  constructor(key, mode) {
     this.key = (key || 'state_view_router_state');
     this.routes = [];
     this.callbacks = [];
     this.defaultRoute = null;
-    this.persistStateToLocalstorage = persistStateToLocalstorage;
+    this.mode = mode || MicroRouter.modes.windowHash;
   }
 
   addRoute(route, view) {
@@ -83,7 +83,8 @@ export default class MicroRouter {
 
   navigate(viewState){
     let path = this.buildPath(viewState);
-    if(this.persistStateToLocalstorage) localStorage.setItem(this.key, path);
+    if(this.mode === MicroRouter.modes.windowHash) window.location.hash = path;
+    if(this.mode === MicroRouter.modes.localStorage) localStorage.setItem(this.key, path);
     this.runCallbacks();
   };
 
@@ -124,3 +125,9 @@ export default class MicroRouter {
     }
   };
 };
+
+MicroRouter.modes = {
+  windowHash: "windowHash",
+  localStorage: "localStorage",
+};
+

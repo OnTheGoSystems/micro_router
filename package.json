@@ -1,6 +1,6 @@
 {
   "name": "@tarvit/micro_router",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "Simple and minimalistic pure JS router for clientside",
   "main": "index.js",
   "scripts": {

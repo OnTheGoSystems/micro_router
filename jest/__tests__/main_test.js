@@ -4,7 +4,7 @@ import MicroRouter from "../../src/micro_router";
 const CompiledMicroRouter = require("../../index").MicroRouter;
 
 const testRouter = (routerClass)=> {
-  const router = new routerClass(`key${Math.random()}`, true);
+  const router = new routerClass(`key${Math.random()}`, MicroRouter.modes.localStorage);
   const View1 = { name: 'view_1' };
   const View2 = { name: 'view_2' };
   const View3 = { name: 'view_3' };
