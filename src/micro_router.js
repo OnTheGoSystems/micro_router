@@ -40,10 +40,11 @@ export default class MicroRouter {
   };
 
   currentState() {
-    return this.resolve(localStorage.getItem(this.key) || this.defaultRoute);
+    const state = (this.mode === MicroRouter.modes.windowHash) ? this.currentWindowHashState() : localStorage.getItem(this.key);
+    return this.resolve(state || this.defaultRoute);
   };
 
-  currentWindowHashState(){
+  currentWindowHashState() {
     return this.resolve(window.location.hash.replace('#', ''))
   };
 
