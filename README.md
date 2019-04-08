@@ -19,7 +19,7 @@ $ npm publish
 ## Usage examples
 ## With window hash routing
 
-```
+```js
 import { MicroRouter } from "@tarvit/micro_router";
 
 // define router
