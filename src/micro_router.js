@@ -23,12 +23,12 @@ SOFTWARE.
 */
 
 export default class MicroRouter {
-  constructor(key, mode) {
-    this.key = (key || 'micro_router_state');
+  constructor(mode, key) {
     this.routes = [];
     this.callbacks = [];
     this.defaultRoute = null;
     this.mode = mode || MicroRouter.modes.windowHash;
+    this.key = (key || 'micro_router_state');
   }
 
   addRoute(route, view) {
