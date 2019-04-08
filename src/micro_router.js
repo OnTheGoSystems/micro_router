@@ -34,11 +34,11 @@ export default class MicroRouter {
     this.routes.push({route: route, view: view})
   };
 
-  setDefaultRoute(view){
+  setDefaultRoute(view) {
     this.defaultRoute = view;
   };
 
-  currentState(){
+  currentState() {
     return this.resolve(localStorage.getItem(this.key) || this.defaultRoute);
   };
 
