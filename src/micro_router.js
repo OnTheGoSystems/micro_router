@@ -29,6 +29,7 @@ export default class MicroRouter {
     this.defaultRoute = null;
     this.mode = mode || MicroRouter.modes.windowHash;
     this.key = (key || 'micro_router_state');
+    this.logsEnabled = false;
   }
 
   addRoute(route, view) {
@@ -80,7 +81,7 @@ export default class MicroRouter {
           }
         }
         if(valid) {
-          console.log('MicroRouter.resolve', route, params);
+          if(this.logsEnabled) console.log('MicroRouter.resolve', route, params);
           return params
         }
       }
@@ -122,15 +123,15 @@ export default class MicroRouter {
       path = path.replace(':' + params[i], viewState[params[i]])
     }
 
-    console.log('MicroRouter.buildPath', viewState, path);
+    if(this.logsEnabled) console.log('MicroRouter.buildPath', viewState, path);
     return path;
   };
 
   routeForView(view){
     for(let i = 0; i < this.routes.length; i++) {
       if(this.routes[i].view === view) {
-        console.log('MicroRouter.routeForView', view, this.routes[i]);
-        return this.routes[i]
+        if(this.logsEnabled) console.log('MicroRouter.routeForView', view, this.routes[i]);
+        return this.routes[i];
       }
     }
   };
