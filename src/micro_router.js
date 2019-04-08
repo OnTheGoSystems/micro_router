@@ -53,7 +53,7 @@ export default class MicroRouter {
   };
 
   bindToWindowHash() {
-    window.onhashchange = function(){
+    window.onhashchange = () => {
       this.navigate(this.currentWindowHashState());
     };
   };
