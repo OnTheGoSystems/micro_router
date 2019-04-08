@@ -24,7 +24,7 @@ SOFTWARE.
 
 export default class MicroRouter {
   constructor(key, mode) {
-    this.key = (key || 'state_view_router_state');
+    this.key = (key || 'micro_router_state');
     this.routes = [];
     this.callbacks = [];
     this.defaultRoute = null;
