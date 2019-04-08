@@ -29,7 +29,7 @@ const testRouter = (routerClass)=> {
   expect(router.resolve('third/good/value')).toEqual({ view: View3, param: 'good', other_param: 'value' });
   expect(router.resolve('another_third')).toEqual({ view: View3 });
 
-  // nagivate
+  // navigate
   router.navigateByPath('other/123');
   expect(router.currentState()).toEqual({ view: View2, param: '123' });
 
