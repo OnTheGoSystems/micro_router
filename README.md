@@ -56,6 +56,7 @@ export default class AppRoot extends Component {
       viewState: MyRouter.currentState()
     };
 
+    // subscribe to updates
     MyRouter.afterNavigate(()=>{
       this.setState({
         viewState: MyRouter.currentState()
