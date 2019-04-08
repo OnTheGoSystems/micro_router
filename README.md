@@ -30,7 +30,7 @@ MyRouter.setDefaultRoute('notification/example');
 MyRouter.addRoute('dashboard', StateDashboard); // StateDashboard is your ReactComponent.
 MyRouter.addRoute('notification/:text', StateNotification); // StateNotification is another your ReactComponent.
 
-// create nav helpers (optinal)
+// create nav helpers (optional)
 MyRouter.nav = {
   toDashboard: () => {
     MyRouter.navigate({ view: StateDashboard});
