@@ -1,11 +1,11 @@
 {
   "name": "@tarvit/micro_router",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "Simple and minimalistic pure JS router for clientside",
   "main": "index.js",
   "scripts": {
     "test": "yarn jest",
-    "prepublish": "npm run build",
+    "prepublish": "yarn build && yarn test",
     "build": "cross-env BABEL_ENV=production babel src --out-dir lib"
   },
   "repository": {
