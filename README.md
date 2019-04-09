@@ -1,21 +1,6 @@
 # MicroRouter
 ## Simple and minimalistic pure JS router for clientside
 
-# Commands
-
-## install dependencies
-$ yarn
-
-## test
-$ yarn test
-
-## build
-$ yarn build
-
-## release
-$ npm publish
-
-
 ## Usage examples
 ## With window hash routing
 
@@ -78,3 +63,17 @@ export default class AppRoot extends Component {
 ```
 
 To change router state use the folowing syntax`MyRouter.navigate({ view: StateNotification, text: message})` or `MyRouter.navigatebyPath('notification/your-text-here')`
+
+
+# Commands for development
+## install dependencies
+$ yarn
+
+## test
+$ yarn test
+
+## build
+$ yarn build
+
+## release
+$ npm publish
