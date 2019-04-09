@@ -1,8 +1,7 @@
 # MicroRouter
 ## Simple and minimalistic pure JS router for clientside
 
-## Usage examples
-## With window hash routing
+# Usage example
 
 ```js
 import { MicroRouter } from "@tarvit/micro_router";
